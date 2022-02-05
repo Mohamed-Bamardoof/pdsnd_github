@@ -10,7 +10,10 @@ Explore US Bikeshare Data
 This project aims to present statistics related to bike share systems for three major cities in United States: Chicago, New York City and Washington in an interactive way. This project was created using Python, in addition to NumPy and pandas libraries.
 
 ### Files used
-Include the files used
+The files that are used in this project are:
+- chicago.csv
+- new_york_city.csv
+- washington.csv
 
 ### Credits
 It's important to give proper credit. Add links to any repo that inspired you or blogposts you consulted.
