@@ -1,4 +1,3 @@
->**Note**: Please **fork** the current Udacity repository so that you will have a **remote** repository in **your** Github account. Clone the remote repository to your local machine. Later, as a part of the project "Post your Work on Github", you will push your proposed changes to the remote repository in your Github account.
 
 ### Date created
 This project was created in 5-FEB-2022
@@ -16,4 +15,4 @@ The files that are used in this project are:
 - washington.csv
 
 ### Credits
-It's important to give proper credit. Add links to any repo that inspired you or blogposts you consulted.
+I used several of datetime data properties from this [website](https://pandas.pydata.org/pandas-docs/stable/reference/arrays.html#datetime-data)
