@@ -6,6 +6,7 @@ CITY_DATA = { 'chicago': 'chicago.csv',
               'new york city': 'new_york_city.csv',
               'washington': 'washington.csv' }
 
+# The variables Months and Days will be used in get_filters function to check the correctness of user input
 Months = ['january', 'february', 'march', 'april', 'may', 'june']
 Days = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday']
 
