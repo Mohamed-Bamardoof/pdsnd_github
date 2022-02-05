@@ -35,8 +35,8 @@ def get_filters ():
         except NameError:
             print("The input is invalid")
 
-    # TO DO: get user input for month (all, january, february, ... , june)
 
+    # TO DO: get user input for month (all, january, february, ... , june)
     while True:
         try:
             month = input("\nWhich month would you like to filter by? January, February, March, April, May or June?\n")
@@ -190,7 +190,7 @@ def user_stats(df, city):
         print(gender)
 
 
-    # TO DO: Display earliest, most recent, and most common year of birth
+        # TO DO: Display earliest, most recent, and most common year of birth
         earliest_year_of_birth = df['Birth Year'].min()
         print('The earliest year of birth is:',earliest_year_of_birth)
 
