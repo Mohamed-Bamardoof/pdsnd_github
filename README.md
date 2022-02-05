@@ -3,7 +3,7 @@
 This project was created in 5-FEB-2022
 
 ## Project Title
-Explore US Bikeshare Data
+**Explore US Bikeshare Data**
 
 ## Description
 This project aims to present statistics related to bike share systems for three major cities in United States: Chicago, New York City and Washington in an interactive way. This project was created using Python, in addition to NumPy and pandas libraries.
