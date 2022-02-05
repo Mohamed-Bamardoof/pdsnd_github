@@ -6,6 +6,7 @@ CITY_DATA = { 'chicago': 'chicago.csv',
               'new york city': 'new_york_city.csv',
               'washington': 'washington.csv' }
 
+# The variables Months and Days will be used in get_filters function to check the correctness of user input
 Months = ['january', 'february', 'march', 'april', 'may', 'june']
 Days = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday']
 
@@ -19,12 +20,12 @@ def get_filters ():
         (str) day - name of the day of week to filter by, or "all" to apply no day filter
     """
     print('Hello! Let\'s explore some US bikeshare data!')
-    
+
     # TO DO: get user input for city (chicago, new york city, washington). HINT: Use a while loop to handle invalid inputs
     while True:
         try:
             city = input("Which city do you want to see its data? Chicago, New York City or Washington?\n")
-            print("You Entered: {}".format(city)) 
+            print("You Entered: {}".format(city))
 
             if (city.lower() in CITY_DATA) != True:
                 print('There is a mistake in the name of the city\n')
@@ -32,37 +33,37 @@ def get_filters ():
                 break
 
         except NameError:
-            print("The input is invalid")    
+            print("The input is invalid")
+
 
     # TO DO: get user input for month (all, january, february, ... , june)
-    
     while True:
         try:
             month = input("\nWhich month would you like to filter by? January, February, March, April, May or June?\n")
-            print("You Entered: {}".format(month)) 
-            
+            print("You Entered: {}".format(month))
+
             if (month.lower() in Months) != True:
                 print('There is a mistake in the name of the month\n')
             else:
                 break
 
         except NameError:
-            print("The input is invalid") 
-            
-            
+            print("The input is invalid")
+
+
     # TO DO: get user input for day of week (all, monday, tuesday, ... sunday)
     while True:
         try:
             day = input("\nWhich day would you like to filter by? Sunday, Monday, Tuesday...etc\n")
-            print("You Entered: {}".format(day)) 
-            
+            print("You Entered: {}".format(day))
+
             if (day.lower() in Days) != True:
                 print('There is a mistake in the name of the day\n')
             else:
                 break
-            
+
         except NameError:
-            print("The input is invalid") 
+            print("The input is invalid")
 
 
     print('-'*40)
@@ -80,7 +81,7 @@ def load_data(city, month, day):
     Returns:
         df - Pandas DataFrame containing city data filtered by month and day
     """
-    
+
     # load data file into a dataframe
     df = pd.read_csv(CITY_DATA[city.lower()])
 
@@ -93,13 +94,13 @@ def load_data(city, month, day):
 
     # use the index of the months list to get the corresponding int
     month = Months.index(month.lower()) + 1
-    
+
     # filter by month to create the new dataframe
     df = df[df['month'] == month]
-    
+
     # filter by day of week to create the new dataframe
     df = df[df['day_of_week'] == day.title()]
-    
+
     return df
 
 
@@ -163,7 +164,7 @@ def trip_duration_stats(df):
     # TO DO: display mean travel time
     mean_travel_time = df['Trip Duration'].mean()
     print("Mean travel time =", mean_travel_time)
-    
+
 
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
@@ -187,15 +188,15 @@ def user_stats(df, city):
     else:
         gender = df['Gender'].value_counts()
         print(gender)
-    
-    
-    # TO DO: Display earliest, most recent, and most common year of birth
+
+
+        # TO DO: Display earliest, most recent, and most common year of birth
         earliest_year_of_birth = df['Birth Year'].min()
         print('The earliest year of birth is:',earliest_year_of_birth)
-        
+
         recent_year_of_birth = df['Birth Year'].max()
         print('The most recent year of birth is:',recent_year_of_birth)
-        
+
         most_common_year_of_birth = df['Birth Year'].mode()[0]
         print('The most common year of birth is:',most_common_year_of_birth)
 
@@ -203,27 +204,27 @@ def user_stats(df, city):
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
 
-    
-    
+
+
 def display_row_data(df):
     """Displays raw data based on user request."""
-    
+
     # defining the variable used for tracking
     row_index = 0
-    
+
     # The loop is written to make sure if the user wants to see more data
-    while row_index < 400000:
+    while row_index < 300000:
         display = input("Would you like to see 5 rows of data? Type 'yes' or 'no'\n")
-        
+
         if display.lower() == 'yes':
             print(df.iloc[row_index:row_index+5])
             row_index += 5
-            
+
         elif display.lower() == 'no':
             break
-    
-    
-    
+
+
+
 def main():
     while True:
         city, month, day = get_filters()
